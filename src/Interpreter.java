@@ -16,7 +16,7 @@ public class Interpreter {
         Stm prog2 = new PrintStm(
                         new LastExpList(
                             new OpExp(new NumExp(4), OpExp.Times, new NumExp(5))
-                )
+                    )
         );
 //        run(prog2);
 
@@ -37,6 +37,20 @@ public class Interpreter {
                 new PrintStm(new LastExpList(new IdExp("a")))
         );
 
-        run(prog4);
+//        run(prog4);
+
+        // print(1, 2, 3);
+        Stm prog5 = new PrintStm(
+                new PairExpList(
+                        new NumExp(1),
+                        new PairExpList(
+                                new NumExp(2),
+                                new LastExpList(
+                                        new NumExp(3)
+                                )
+                        )
+                )
+        );
+        run(prog5);
     }
 }

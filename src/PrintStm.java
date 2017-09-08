@@ -6,7 +6,15 @@ public class PrintStm extends Stm {
     }
 
     public void eval(Runtime runtime) {
-        exps.eval(runtime);
-        System.out.println(runtime.value);
+        exps.head.eval(runtime);
+        System.out.print(runtime.value);
+
+        if (exps.tail != null) {
+            System.out.print(" ");
+            PrintStm frame = new PrintStm(exps.tail);
+            frame.eval(runtime);
+        } else {
+            System.out.println("");
+        }
     }
 }
