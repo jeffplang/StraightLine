@@ -7,14 +7,12 @@ public class PrintStm extends Stm {
 
     public void eval(Runtime runtime) {
         exps.head.eval(runtime);
-        System.out.print(runtime.value);
 
-        if (exps.tail != null) {
-            System.out.print(" ");
-            PrintStm frame = new PrintStm(exps.tail);
-            frame.eval(runtime);
+        if (exps instanceof LastExpList) {
+            System.out.println(runtime.value);
         } else {
-            System.out.println("");
+            System.out.print(runtime.value + " ");
+            (new PrintStm(exps.tail)).eval(runtime);
         }
     }
 }
