@@ -16,19 +16,27 @@ public class Interpreter {
         Stm prog2 = new PrintStm(
                         new LastExpList(
                             new OpExp(new NumExp(4), OpExp.Times, new NumExp(5))
-                        )
-                    );
+                )
+        );
 //        run(prog2);
 
         // print(1); print(2); print(3);
         Stm prog3 = new CompoundStm(
-                        new PrintStm(new LastExpList(new NumExp(1))),
-                        new CompoundStm(
-                                new PrintStm(new LastExpList(new NumExp(2))),
-                                new PrintStm(new LastExpList(new NumExp(3)))
-                        )
+                new PrintStm(new LastExpList(new NumExp(1))),
+                new CompoundStm(
+                        new PrintStm(new LastExpList(new NumExp(2))),
+                        new PrintStm(new LastExpList(new NumExp(3)))
+                )
         );
 
-        run(prog3);
+//        run(prog3);
+
+        // a := 3; print(a);
+        Stm prog4 = new CompoundStm(
+                new AssignStm("a", new NumExp(3)),
+                new PrintStm(new LastExpList(new IdExp("a")))
+        );
+
+        run(prog4);
     }
 }

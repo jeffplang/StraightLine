@@ -6,6 +6,6 @@ public class IdExp extends Exp {
     }
 
     public void eval(Runtime runtime) {
-
+        runtime.value = runtime.symbolTable.get(id);
     }
 }
