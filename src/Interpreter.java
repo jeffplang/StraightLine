@@ -18,6 +18,17 @@ public class Interpreter {
                             new OpExp(new NumExp(4), OpExp.Times, new NumExp(5))
                         )
                     );
-        run(prog2);
+//        run(prog2);
+
+        // print(1); print(2); print(3);
+        Stm prog3 = new CompoundStm(
+                        new PrintStm(new LastExpList(new NumExp(1))),
+                        new CompoundStm(
+                                new PrintStm(new LastExpList(new NumExp(2))),
+                                new PrintStm(new LastExpList(new NumExp(3)))
+                        )
+        );
+
+        run(prog3);
     }
 }

@@ -6,6 +6,7 @@ public class CompoundStm extends Stm {
         stm2 = s2;
     }
     public void eval(Runtime runtime) {
-
+        stm1.eval(runtime);
+        stm2.eval(runtime);
     }
 }
