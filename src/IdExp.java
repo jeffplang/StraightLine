@@ -4,4 +4,8 @@ public class IdExp extends Exp {
     public IdExp(String i) {
         id = i;
     }
+
+    public void eval(Runtime runtime) {
+
+    }
 }

@@ -5,4 +5,7 @@ public class EseqExp extends Exp {
         stm = s;
         exp = e;
     }
+    public void eval(Runtime runtime) {
+
+    }
 }

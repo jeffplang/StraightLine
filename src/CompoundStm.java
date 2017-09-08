@@ -5,4 +5,7 @@ public class CompoundStm extends Stm {
         stm1 = s1;
         stm2 = s2;
     }
+    public void eval(Runtime runtime) {
+
+    }
 }

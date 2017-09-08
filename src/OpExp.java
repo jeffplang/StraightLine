@@ -8,4 +8,8 @@ public class OpExp extends Exp {
         oper = o;
         right = r;
     }
+
+    public void eval(Runtime runtime) {
+
+    }
 }
