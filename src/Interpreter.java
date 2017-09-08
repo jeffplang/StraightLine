@@ -10,6 +10,14 @@ public class Interpreter {
         // print(5)
         Stm prog = new PrintStm(new LastExpList(new NumExp(6)));
 
-        run(prog);
+        // print(5 + 3)
+//        run(prog);
+
+        Stm prog2 = new PrintStm(
+                        new LastExpList(
+                            new OpExp(new NumExp(4), OpExp.Times, new NumExp(5))
+                        )
+                    );
+        run(prog2);
     }
 }

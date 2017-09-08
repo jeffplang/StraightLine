@@ -10,6 +10,23 @@ public class OpExp extends Exp {
     }
 
     public void eval(Runtime runtime) {
+        left.eval(runtime);
+        int temp = runtime.value;
+        right.eval(runtime);
 
+        switch(oper) {
+            case Plus:
+                runtime.value = temp + runtime.value;
+                break;
+            case Minus:
+                runtime.value = temp - runtime.value;
+                break;
+            case Times:
+                runtime.value = temp * runtime.value;
+                break;
+            case Div:
+                runtime.value = temp / runtime.value;
+                break;
+        }
     }
 }
